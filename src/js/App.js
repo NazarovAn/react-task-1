@@ -4,7 +4,7 @@ import {
     Switch,
     Route,
 } from "react-router-dom";
-import Start from './pages/index';
+import Main from './pages/main';
 import Slider from './pages/slider';
 
 export default function App() {
@@ -15,7 +15,7 @@ export default function App() {
                 <Slider />
             </Route>
             <Route path="/">
-                <Start />
+                <Main />
             </Route>
           </Switch>
       </Router>
