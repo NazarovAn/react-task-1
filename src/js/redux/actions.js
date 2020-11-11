@@ -1,8 +1,10 @@
 import { ADD_IMAGE } from './actionTypes';
 
-export const addImage = (content) => ({
-    type: ADD_IMAGE,
-    payload: {
-      content
+export function addImage(imageUrl) {
+    return {
+      type: ADD_IMAGE,
+      payload: {
+        imageUrl
+      }
     }
-});
+};
