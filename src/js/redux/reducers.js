@@ -4,7 +4,7 @@ import { ADD_IMAGE } from './actionTypes';
 function images(state = [], action) {
     switch (action.type) {
       case ADD_IMAGE:
-        return state.concat([action.imageURL])
+        return state.concat([action.payload])
       default:
         return state
     }

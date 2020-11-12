@@ -1,5 +1,6 @@
 import React from 'react';
 import store from '../redux/initialState';
+import { addImage } from '../redux/actions';
 
 // import { createStore, applyMiddleware } from 'redux';
 // import thunk from 'redux-thunk';
@@ -18,11 +19,8 @@ import store from '../redux/initialState';
 async function getImages(url) {
     const resp = await fetch(url);
     const json = await resp.json();
-    json.forEach((url) => {
-        store.dispatch({
-            type: 'ADD_IMAGE',
-            imageURL: url
-        })
+    json.forEach((string) => {
+        store.dispatch(addImage(string));
     })
 }
 
