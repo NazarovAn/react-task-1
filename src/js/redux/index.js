@@ -1,7 +1,7 @@
-import { setImages } from './actions';
+// import { setImages } from './actions';
 
-const redux = {
-    setImages,
-}
+// const redux = {
+//     setImages,
+// }
 
-export default redux
+// export default redux

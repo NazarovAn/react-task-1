@@ -4,19 +4,14 @@ import {
     Switch,
     Route,
 } from "react-router-dom";
-import Main from './pages/main';
-import Slider from './pages/slider';
+import Pages from './pages/index';
 
 export default function routes() {
     return (
         <Router>
             <Switch>
-            <Route path="/slider">
-                <Slider />
-            </Route>
-            <Route path="/">
-                <Main />
-            </Route>
+                <Route path="/slider" component={Pages.Slider} />
+                <Route path="/" component={Pages.Main} />
             </Switch>
         </Router>
     )
