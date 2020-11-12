@@ -1,17 +1,19 @@
 import React from 'react';
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
+import store from '../redux/initialState';
 
-function image(state = [], action) {
-  switch (action.type) {
-    case 'ADD_IMAGE':
-      return state.concat([action.imageURL])
-    default:
-      return state
-  }
-}
+// import { createStore, applyMiddleware } from 'redux';
+// import thunk from 'redux-thunk';
 
-const store = createStore(image, [], applyMiddleware(thunk))
+// function addImage(state = [], action) {
+//   switch (action.type) {
+//     case 'ADD_IMAGE':
+//       return state.concat([action.imageURL])
+//     default:
+//       return state
+//   }
+// }
+
+// const store = createStore(addImage, [], applyMiddleware(thunk))
 
 async function getImages(url) {
     const resp = await fetch(url);
@@ -26,6 +28,7 @@ async function getImages(url) {
 
 getImages('https://imagesapi.osora.ru/');
 
+setTimeout(() => console.log(store.getState()), 2000);
 
 export default function Slider() {
     return (
