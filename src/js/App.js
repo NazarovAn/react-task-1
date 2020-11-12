@@ -1,14 +1,17 @@
 import React from 'react';
-import Main from './pages/main';
-import Slider from './pages/slider';
+import Pages from  './pages/index';
 import { Provider } from 'react-redux';
-import initialState from './redux/initialState';
+import { createStore } from 'redux';
+import reducers from './js/redux/reducers';
+import initialState from './js/redux/initialState';
+
+const store = createStore(reducers, initialState)
 
 export default function App() {
     return (
-        <Provider store={initialState}>
-            <Slider />
-            <Main />
+        <Provider store={store}>
+            <Pages.Slider />
+            <Pages.Main />
         </Provider>
     );
 }

@@ -1,35 +1,25 @@
 import React from 'react';
-import store from '../redux/initialState';
-import { addImage } from '../redux/actions';
+import redux from '../redux/index';
+import { connect } from 'react-redux';
 
-// import { createStore, applyMiddleware } from 'redux';
-// import thunk from 'redux-thunk';
+export default class Slider extends React.Component {
+    constructor(props) {
+        super(props)
+        this.getImages('https://imagesapi.osora.ru/');
+    }
 
-// function addImage(state = [], action) {
-//   switch (action.type) {
-//     case 'ADD_IMAGE':
-//       return state.concat([action.imageURL])
-//     default:
-//       return state
-//   }
-// }
+    async getImages(url) {
+        const resp = await fetch(url);
+        const json = await resp.json();
+        const imagesUrl = [];
+        json.forEach((string) => {
+            imagesUrl.push(string);
+        })
 
-// const store = createStore(addImage, [], applyMiddleware(thunk))
+        redux.setImages(imagesUrl)
+    }
 
-async function getImages(url) {
-    const resp = await fetch(url);
-    const json = await resp.json();
-    json.forEach((string) => {
-        store.dispatch(addImage(string));
-    })
-}
-
-getImages('https://imagesapi.osora.ru/');
-
-setTimeout(() => console.log(store.getState()), 2000);
-
-export default function Slider() {
-    return (
-        <div></div>
-    )
+    render() {
+        return <div></div>
+    }
 }

@@ -1,10 +1,8 @@
-import { ADD_IMAGE } from './actionTypes';
+import { SET_IMAGE } from './actionTypes';
 
-export function addImage(imageUrl) {
+export function setImages(imageUrl) {
     return {
-      type: ADD_IMAGE,
-      payload: {
-        imageUrl
-      }
+      type: SET_IMAGE,
+      imageUrl
     }
 };
