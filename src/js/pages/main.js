@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 export default function Main() {
     return (
-        <div className='slider_container'>
-            <h1 className='slider_heading'>Hello</h1>
-            <Link to='/slider' className='slider_button'>Слайдер</Link>
+        <div className='main__container'>
+            <h1 className='main__heading'>Hello</h1>
+            <Link to='/slider' className='main__button'>Слайдер</Link>
         </div>
     )
 }

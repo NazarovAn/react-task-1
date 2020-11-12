@@ -1,24 +1,43 @@
 $color: rgb(230, 230, 230);
 
-*{
-    margin: 0;
-    padding: 0;
-}
-
-.slider_container {
-    padding: 40vh;
+.main__container,
+.slider__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: $color;
     height: 100vh;
     text-align: center;
 }
 
-.slider_heading {
-    margin-bottom: 20px;
+.main__heading {
+    text-transform: uppercase;
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
-.slider_button {
+.main__button,
+.slider__button,
+.slider__switch_button {
     background-color: black;
     color: #ffffff;
     padding: 10px;
     cursor: pointer;
+}
+
+.silder__image_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider__image {
+    width: 600px;
+    height: 400px;
+    margin: 10px;
+}
+
+.slider__switch_button {
+    margin-bottom: 10px;
 }
